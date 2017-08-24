@@ -3,9 +3,8 @@ import unittest
 from app import app
 
 class ProjectTests(unittest.TestCase):
-    ############################
+
     #### setup and teardown ####
-    ############################
 
     # executed prior  to each test
     def setUp(self):
@@ -19,13 +18,8 @@ class ProjectTests(unittest.TestCase):
     def tearDown(self):
         pass
 
-    ########################
-    #### Helper Methods ####
-    ########################
 
-    ###############
     #### Tests ####
-    ###############
 
     def test_main_page(self):
         response = self.app.get('/', follow_redirects=True)
