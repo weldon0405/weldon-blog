@@ -6,6 +6,7 @@ from app import app
 
 class ProjectTests(unittest.TestCase):
 
+
 #################### setup and teardown ####################
 
     # executed prior  to each test
