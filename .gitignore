@@ -100,3 +100,6 @@ ENV/
 
 # VS Code
 .vscode
+
+# Instance folder used for app configuration
+/instance
