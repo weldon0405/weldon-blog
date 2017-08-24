@@ -1,14 +1,22 @@
-<html>
-    <head>
-        {% if title %}
-        <title> {{ title }} - Weldon's Blog </title>
-        {% else %}
-        <title>Welcome to Weldon's Blog</title>
-        {% endif %}
-    </head>
-    <body>
-        <div>Blog: <a href="/index">Home</a></div>
-        <hr>
-        {% block content %}{% endblock %}
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Weldon's Blog and Portfolio">
+    <meta name="author" content="Weldon Malbrough">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css?q=1280549780') }}">
+
+    {% if title %}
+    <title> {{ title }} - Weldon's Blog </title>
+    {% else %}
+    <title>Welcome to Weldon's Blog</title>
+    {% endif %}
+</head>
+<body>
+    <div>Blog: <a href="/index">Home</a></div>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
 </html>
