@@ -26,7 +26,9 @@ class ProjectTests(unittest.TestCase):
 
     def test_main_page(self):
         response = self.app.get('/', follow_redirects=True)
-        self.assertIn(b'Lorem', response.data)
+        self.assertIn(b'wife', response.data)
+        self.assertIn(b'husband', response.data)
+        self.assertIn(b'children', response.data)
         self.assertIn(b'Weldon', response.data)
         self.assertIn(b'Brandy', response.data)
         self.assertIn(b'Blog', response.data)
