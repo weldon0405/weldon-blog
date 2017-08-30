@@ -1,9 +1,7 @@
-body {
-    padding: 60px 0;
-    background: rgb(183, 187, 192);
-}
+.primary-5 { color: #246F35}
 
-.primary-0 { color: rgba( 77,118,179,1) }	/* Main Primary color */
+Colors
+.primary-0 { color: rgba( 77,118,179,1) }	
 .primary-1 { color: rgb(183, 187, 192) }
 .primary-2 { color: rgba(141,147,155,1) }
 .primary-3 { color: rgba(  3, 94,229,1) }

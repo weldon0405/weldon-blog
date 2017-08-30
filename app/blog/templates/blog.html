@@ -2,6 +2,28 @@
 {% block content %}
     {# <h1>Hello, {{ user.nickname }}! </h1> #}
     {% for article in articles %}
-    <div><h1> {{ article.article_title }} </h1> <h5>Author: {{ article.article_author }} <br>Posted: {{ article.pub_date }} </h5><p> {{ article.article_content }} </p></div>
+
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-sm-8 col-xs-12 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            {{ article.article_title }}
+                        </h3>
+                        <p class="card-subtitle mb-2 text-muted">
+                            By <a href="#" class="post-author">
+                                    {{ article.article_author }}
+                                </a> on {{ article.pub_date }}
+                        </p>
+                        <p class="card-text">
+                            {{ article.article_content }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     {% endfor %}
 {% endblock %}
