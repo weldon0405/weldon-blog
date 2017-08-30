@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-3 text-center">Add Article</h1>
+    </div>
+</div>
+
+<form action="{{ url_for('blog.add_article') }}" method="post">
+    {{ form.csrf_token }}
+    <div class="container">
+        <div class="m-2">
+            {{ form.article_title(placeholder="Article Title") }}
+        </div>
+        <div class="m-2">
+            {{ form.article_author(placeholder="Article Author") }}
+        </div>
+        <div class="m-2">
+            {{ form.article_content(placeholder="Article Content") }}
+        </div>
+        <button class="btn btn-lg btn-success" type="submit">Add Article</button>
+    </div>
+    
+</form>
+
+{% endblock %}
