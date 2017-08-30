@@ -7,7 +7,7 @@
     <meta name="description" content="Weldon's Blog and Portfolio">
     <meta name="author" content="Weldon Malbrough">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="./static/css/main.css?q=1280549780"> -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> -->
 
     {% if title %}
     <title> {{ title }} - Weldon's Blog </title>
@@ -29,6 +29,7 @@
                     <li class="nav-item"><a class="nav-link text-success" href="/portfolio">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link text-success" href="/about">About</a></li>
                     <li class="nav-item"><a class="nav-link text-success" href="/contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link text-success" href="/add_article">Add Article</a></li>
                     <li class="nav-item"><a class="nav-link text-success" href="/login">Login</a></li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -38,11 +39,17 @@
                 </form>
             </div>
         </nav>
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-3 text-center">Most Recent Articles</h1>
-            </div>
-        </div>
+
+        <!-- flash messages -->
+        {% for error_message in get_flashed_messages(category_filter=["error"]) %}
+            <div class="alert alert-danger alert-dismissible">{{ error_message }}</div>
+        {% endfor %}
+        {% for success_message in get_flashed_messages(category_filter=["success"]) %}
+            <div class="alert alert-success alert-dismissible">{{ success_message }}</div>
+        {% endfor %}
+        {% for info_message in get_flashed_messages(category_filter=["info"]) %}
+            <div class="alert alert-info alert-dismissible">{{ info_message }}</div>
+        {% endfor %}
 
         {% block content %}{% endblock %}
 
