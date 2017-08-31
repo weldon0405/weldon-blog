@@ -1,0 +1,34 @@
+<!-- app/templates/register.html -->
+
+{% extends "base.html" %}
+{% from "_form_macros.html" import render_field %}
+ 
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-6 text-center">Please Register Your New Account</h1>
+    </div>
+</div>
+
+
+
+<div class="col-sm-12 col-md-4 mx-auto my-4">
+    <form action="{{ url_for('users.register') }}" method="post">
+        {{ form.csrf_token }}
+        <div class="container">
+            <dl>
+                {{ render_field(form.username, placeholder="Username", style="width: 100%") }}
+                {{ render_field(form.first_name, placeholder="First Name", style="width: 100%") }}
+                {{ render_field(form.last_name, placeholder="Last Name", style="width: 100%") }}
+                {{ render_field(form.email, placeholder="Email address", style="width: 100%") }}
+                {{ render_field(form.password, placeholder="Password", style="width: 100%") }}
+                {{ render_field(form.confirm, placeholder="Confirm password", style="width: 100%") }}
+            </dl>
+        <button class="btn btn-sm btn-success btn-block" type="submit">Create New Account</button>
+        <button class="btn btn-sm btn-warning btn-block" type="reset">Reset</button>
+        </div>
+    </form>
+</div>
+ 
+{% endblock %}
